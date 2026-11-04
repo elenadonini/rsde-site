@@ -25,7 +25,6 @@ window.addEventListener('error',function(e){var t=e.target;
     <a class="hide-s" href="https://digis.fbk.eu/">Digital Society Center</a>
     <div class="right">
       <a class="hide-s" href="#join">Join us</a>
-      <div class="lang"><a class="on" href="/">EN</a><a href="/it/">IT</a></div>
     </div>
   </div>
 </div>
@@ -172,7 +171,7 @@ window.addEventListener('error',function(e){var t=e.target;
     <div class="callout">
       <div>
         <h3>Want to collaborate with us?</h3>
-        <p>Are you a researcher, a student or simply interested in remote sensing? We are always happy to hear new ideas, exchange experiences and start new collaborations.</p>
+        <p>We are open to collaborations of all kinds: joint research, national and European project proposals, industrial partnerships, research visits and student theses. Whether you are a researcher, a company, an institution or a student interested in remote sensing, we would be glad to hear your ideas.</p>
       </div>
       <a class="btn" href="#contact">Get in touch</a>
     </div>
@@ -279,7 +278,7 @@ window.addEventListener('error',function(e){var t=e.target;
     </div>
     <p class="count" id="count"></p>
     <ol class="pubs" id="pubs"></ol>
-    <div style="margin-top:24px"><a class="btn ghost" id="pubtoggle" href="publications.html">All publications →</a></div>
+    <div style="margin-top:24px"><a class="btn ghost" id="pubtoggle" href="publications.html">All papers →</a></div>
   </div>
 </section>
 
@@ -287,7 +286,6 @@ window.addEventListener('error',function(e){var t=e.target;
 <section id="team">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">05</span><h2>Team</h2></div>
-    <p class="sec-intro">Researchers, PhD students, visiting researchers, interns and students from the University of Trento and beyond.</p>
     <div id="people"></div>
 
     <div class="sub">
@@ -331,10 +329,11 @@ window.addEventListener('error',function(e){var t=e.target;
         <div class="links">
           <span>Head of Unit: <strong>Francesca Bovolo</strong> · <a href="mailto:bovolo@fbk.eu">bovolo@fbk.eu</a></span>
           <span>Phone: <a href="tel:+390461314503">+39 0461 314503</a></span>
-          <a href="https://www.google.com/maps/d/viewer?mid=1HHlC1KAeOg2_l9m0GppSb4Nsdca0VQw">Open map →</a>
-          <a href="https://digis.fbk.eu/">Digital Society Center →</a>
-          <a href="https://www.fbk.eu/">Fondazione Bruno Kessler →</a>
         </div>
+      </div>
+      <div class="cmap">
+        <iframe title="Map: Fondazione Bruno Kessler, Via Sommarive 18, Povo (Trento)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          src="https://www.google.com/maps?q=Fondazione+Bruno+Kessler,+Via+Sommarive+18,+38123+Povo+TN,+Italy&amp;z=15&amp;output=embed"></iframe>
       </div>
     </div>
   </div>
@@ -350,12 +349,11 @@ window.addEventListener('error',function(e){var t=e.target;
     <div>
       <div style="color:#fff;font-weight:600;margin-bottom:6px">RSDE · Remote Sensing for Digital Earth</div>
       Developed by RSDE · Fondazione Bruno Kessler<br>
-      Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="https://www.fbk.eu/en/privacy-cookies-policy/">Privacy & cookie policy</a>
+      Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="https://www.fbk.eu/en/privacy-cookies-policy/">Privacy & cookie policy</a> · <a href="#top">Back to top ↑</a>
     </div>
-    <div>
-      <div style="color:#fff;font-weight:600;margin-bottom:6px">Quick links</div>
-      <a href="https://www.fbk.eu/">FBK</a> · <a href="https://digis.fbk.eu/">Digital Society</a><br>
-      <a href="#top">Back to top ↑</a>
+    <div class="flinks">
+      <a href="https://www.fbk.eu/" class="fl"><img src="img/fbk-logo-white.png" data-fallback="https://most.fbk.eu/assets/images/logos/FBK_Logo_Horizontal_white.png" alt="Fondazione Bruno Kessler"></a>
+      <a href="https://digis.fbk.eu/" class="fl ft"><span>Digital Society</span><small>Center · FBK</small></a>
     </div>
   </div>
 </footer>
@@ -509,7 +507,7 @@ function renderPubs(){
   const what = kind === 'j' ? 'journal papers' : 'conference papers';
   document.getElementById('count').textContent = `Latest ${list.length} of ${all.length} ${what}`;
   tog.href = 'publications.html' + (kind === 'c' ? '#conferences' : '#journals');
-  tog.textContent = `All ${all.length} ${what} →`;
+  tog.textContent = 'All papers →';
   document.getElementById('pubs').innerHTML = list.map(p => `
     <li><span class="y">${p[3]}</span><div>
       <div class="t">${esc(p[1])}</div>

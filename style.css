@@ -295,3 +295,19 @@
   #work .card .thumb img{width:100%;height:100%;object-fit:cover;object-position:center}
   #work .card{transition:box-shadow .2s, transform .2s}
   #work .card:hover{box-shadow:0 14px 30px rgba(15,27,42,.10);transform:translateY(-2px)}
+
+  /* Contact with map */
+  .contact{grid-template-columns:1fr 1.25fr!important;gap:40px;align-items:stretch}
+  @media(max-width:800px){.contact{grid-template-columns:1fr!important}}
+  .cmap{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:340px;background:var(--bg-2)}
+  .cmap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+  /* Footer: bigger institutional links */
+  footer .wrap{align-items:center}
+  .flinks{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+  .flinks .fl{display:flex;align-items:center;text-decoration:none;opacity:.9;transition:opacity .15s}
+  .flinks .fl:hover{opacity:1}
+  .flinks img{height:44px;width:auto}
+  .flinks .ft{flex-direction:column;align-items:flex-start;border-left:1px solid rgba(255,255,255,.25);padding-left:28px;line-height:1.15}
+  .flinks .ft span{color:#fff;font-size:22px;font-weight:600}
+  .flinks .ft small{color:#aab6c4;font-size:13px;margin-top:3px}
