@@ -1,0 +1,47 @@
+/* ===== RSDE – animations (trial). To remove: delete the two lines that load
+   animations.css and animations.js in index.html ===== */
+
+/* Hero: elements appear one after the other */
+.anim .hero h1,.anim .hero .lead,.anim .hero .btns,.anim .hero .tags{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.anim .hero .lead{animation-delay:.15s}
+.anim .hero .btns{animation-delay:.3s}
+.anim .hero .tags{animation-delay:.45s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* Hero illustration: planet, orbit and scanning satellite */
+.hero .wrap{position:relative}
+.orbitviz{position:absolute;right:0;top:50%;width:min(440px,38vw);aspect-ratio:1;transform:translateY(-50%);pointer-events:none;opacity:0;animation:fadein 1.4s .3s forwards}
+@media(max-width:900px){.orbitviz{display:none}}
+@keyframes fadein{to{opacity:1}}
+.orbitviz .ring{transform-origin:50% 50%;animation:spin 60s linear infinite}
+.orbitviz .sat{transform-origin:220px 220px;animation:spin 14s linear infinite}
+.orbitviz .beam{animation:beam 2.8s ease-in-out infinite}
+.orbitviz .pulse{transform-origin:220px 220px;animation:pulse 4s ease-out infinite}
+.orbitviz .pulse.p2{animation-delay:2s}
+.orbitviz .layer{stroke-dasharray:6 8;animation:dash 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes beam{0%,100%{opacity:.15}50%{opacity:.55}}
+@keyframes pulse{0%{transform:scale(.55);opacity:.5}100%{transform:scale(1.15);opacity:0}}
+@keyframes dash{to{stroke-dashoffset:-140}}
+
+/* Reveal on scroll */
+.anim .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.anim .reveal.in{opacity:1;transform:none}
+
+/* Hover lift on cards */
+.card,.mini,.news-item,.person a.pl .ph{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover,.mini:hover,.news-item:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(15,27,42,.10)}
+.card .thumb img{transition:transform .6s ease}
+.card:hover .thumb img{transform:scale(1.04)}
+
+/* Accessibility: no motion if the user asked for it */
+@media (prefers-reduced-motion: reduce){
+  .anim *,.anim *::before,.anim *::after{animation:none!important;transition:none!important}
+  .anim .reveal,.anim .hero h1,.anim .hero .lead,.anim .hero .btns,.anim .hero .tags,.orbitviz{opacity:1!important;transform:none!important}
+  .orbitviz{transform:translateY(-50%)!important}
+}
+
+/* keep the illustration clear of the text */
+.orbitviz{width:min(380px,30vw);right:-10px}
+.hero p.lead{max-width:52ch}
+@media(max-width:1100px){.orbitviz{width:min(300px,26vw)}}

@@ -16,6 +16,7 @@ window.addEventListener('error',function(e){var t=e.target;
   if(t&&t.tagName==='IMG'&&t.dataset.fallback&&!t.dataset.tried){t.dataset.tried='1';t.src=t.dataset.fallback;}},true);
 </script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="animations.css">
 </head>
 <body id="top">
 
@@ -580,7 +581,7 @@ const photo = (p, w=400) => p.u
 document.getElementById('people').innerHTML = GROUPS.map(([g,label]) => {
   const ps = PEOPLE.filter(p => p.g === g); if (!ps.length) return '';
   if (g === 'interns') return `<p class="subhead">${label}</p>
-    <div class="chips-people">${ps.map(p => `<a class="pc" href="#person-${slug(p.n)}"><b>${esc(p.n)}</b> ${esc(p.r)}</a>`).join('')}</div>`;
+    <div class="chips-people">${ps.map(p => `<span class="pc"><b>${esc(p.n)}</b> ${esc(p.r)}</span>`).join('')}</div>`;
   return `<p class="subhead">${label}</p>
     <div class="team">${ps.map(p => `
       <div class="person"><a class="pl" href="#person-${slug(p.n)}"><div class="ph">${photo(p)}</div><h4>${esc(p.n)}</h4><p>${esc(p.r)}</p></a>${iconRow(p)}</div>`).join('')}</div>`;
@@ -591,7 +592,7 @@ document.getElementById('people').innerHTML = GROUPS.map(([g,label]) => {
 const dlg = document.getElementById('profile');
 function openPerson(){
   const m = location.hash.match(/^#person-(.+)$/);
-  const p = m && PEOPLE.find(x => slug(x.n) === m[1]);
+  const p = m && PEOPLE.find(x => slug(x.n) === m[1] && x.g !== 'interns');
   if (!p) { if (dlg.open) dlg.close(); return; }
   const l = p.links || {};
   const links = LINKS.filter(([k]) => l[k]).map(([k,label,href,text]) =>
@@ -641,5 +642,6 @@ document.querySelectorAll('.arrows button').forEach(b => b.addEventListener('cli
   r.scrollBy({left: b.dataset.dir * 300, behavior:'smooth'});
 }));
 </script>
+<script src="animations.js"></script>
 </body>
 </html>
