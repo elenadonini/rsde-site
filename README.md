@@ -12,6 +12,6 @@ Website of the RSDE research unit (Digital Society Center, Fondazione Bruno Kess
 
 ## How to update
 - **People** (bio, links, photo): `PEOPLE` list at the bottom of `index.html`.
-  Links available: `email`, `scholar`, `website`, `linkedin`, `researchgate`, `orcid`, `github`.
+  Links available: `email`, `phone`, `scholar`, `website`, `linkedin`, `researchgate`, `orcid`, `github`.
 - **Publications**: `PUBS` list at the bottom of `index.html`.
 - **Gallery**: copy the photo into `img/gallery/` and add a line to `PHOTOS` at the bottom of `gallery.html`.
