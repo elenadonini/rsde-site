@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications · RSDE · FBK</title>
+<meta name="description" content="Remote Sensing for Digital Earth (RSDE) is a research unit of the Digital Society Center at Fondazione Bruno Kessler. We develop methods to analyse remote sensing data for Earth observation and planetary exploration.">
+<meta name="theme-color" content="#0068b4">
+<link rel="icon" href="img/cropped-RSDE_Planet_colour_transparent-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+/* Images are served from ./img/ ; if a file is missing, fall back to the original URL */
+window.addEventListener('error',function(e){var t=e.target;
+  if(t&&t.tagName==='IMG'&&t.dataset.fallback&&!t.dataset.tried){t.dataset.tried='1';t.src=t.dataset.fallback;}},true);
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="https://www.fbk.eu/" title="Fondazione Bruno Kessler"><img src="img/fbk-logo-white.png" data-fallback="https://most.fbk.eu/assets/images/logos/FBK_Logo_Horizontal_white.png" alt="Fondazione Bruno Kessler"></a>
+    <a class="hide-s" href="https://digis.fbk.eu/">Digital Society Center</a>
+    <div class="right">
+      <a class="hide-s" href="index.html#join">Join us</a>
+      <div class="lang"><a class="on" href="/">EN</a><a href="/it/">IT</a></div>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" title="RSDE home">
+      <img src="img/RSDE__Digital-Society_colour.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2022/10/RSDE__Digital-Society_colour.png" alt="RSDE · Digital Society · FBK">
+      <span>Remote Sensing for Digital Earth<br>Digital Society Center · FBK</span>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('nav.main').classList.toggle('open')">☰</button>
+    <nav class="main" onclick="if(event.target.tagName==='A')this.classList.remove('open')">
+      <div class="dd"><a href="index.html#approach">Research</a>
+        <div class="menu"><a href="index.html#approach">What we do</a><a href="index.html#projects">Projects</a><a href="index.html#work">Products & data</a></div>
+      </div>
+      <a href="publications.html">Publications</a>
+      <div class="dd"><a href="index.html#team">People</a>
+        <div class="menu"><a href="index.html#team">Team</a><a href="index.html#former">Alumni</a><a href="index.html#join">Join us</a></div>
+      </div>
+      <a href="index.html#latest">News</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" style="padding-bottom:80px">
+  <div class="gal-hero">
+    <a class="sec-num" href="index.html#publications" style="text-decoration:none">← Back to home</a>
+    <h1>Publications</h1>
+    <p>Journal papers and conference contributions of the RSDE unit, most recent first. Search by title, author, venue or keyword.</p>
+  </div>
+  <div class="ptabs" role="tablist">
+    <button class="ptab on" role="tab" data-k="j">Journals <span id="nj"></span></button>
+    <button class="ptab" role="tab" data-k="c">Conferences &amp; abstracts <span id="nc"></span></button>
+  </div>
+  <div class="pub-tools">
+    <input id="q" type="search" placeholder="Search publications… (e.g. change detection, radar sounder, Sentinel-2)">
+    <div class="chips" id="years"></div>
+  </div>
+  <p class="count" id="count"></p>
+  <ol class="pubs" id="pubs"></ol>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div style="color:#fff;font-weight:600;margin-bottom:6px">RSDE · Remote Sensing for Digital Earth</div>
+      Developed by RSDE · Fondazione Bruno Kessler<br>
+      Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="https://www.fbk.eu/en/privacy-cookies-policy/">Privacy & cookie policy</a>
+    </div>
+    <div>
+      <div style="color:#fff;font-weight:600;margin-bottom:6px">Quick links</div>
+      <a href="https://www.fbk.eu/">FBK</a> · <a href="https://digis.fbk.eu/">Digital Society</a><br>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="publications-data.js"></script>
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LISTS = {j: PUBS, c: CONFS};
+let kind = location.hash === '#conferences' ? 'c' : 'j', yr = 'All';
+const yEl = document.getElementById('years'), q = document.getElementById('q');
+document.getElementById('nj').textContent = PUBS.length;
+document.getElementById('nc').textContent = CONFS.length;
+function setTab(k){
+  kind = k; yr = 'All'; q.value = '';
+  document.querySelectorAll('.ptab').forEach(x => x.classList.toggle('on', x.dataset.k === k));
+  history.replaceState(null, '', location.pathname + location.search + (k === 'c' ? '#conferences' : '#journals'));
+  buildYears(); render();
+}
+function buildYears(){
+  const ys = ['All', ...[...new Set(LISTS[kind].map(p=>p[3]))].sort((a,b)=>b-a)];
+  yEl.innerHTML = ys.map(y=>`<button class="chip${String(y)===String(yr)?' on':''}" data-y="${y}">${y}</button>`).join('');
+}
+yEl.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+  yr = b.dataset.y; yEl.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on', c===b)); render(); });
+q.addEventListener('input', render);
+document.querySelectorAll('.ptab').forEach(t => t.addEventListener('click', () => setTab(t.dataset.k)));
+window.addEventListener('hashchange', () => setTab(location.hash === '#conferences' ? 'c' : 'j'));
+function render(){
+  const all = LISTS[kind], s = q.value.trim().toLowerCase();
+  const list = all.filter(p => (yr==='All' || String(p[3])===yr) && (!s || p.join(' ').toLowerCase().includes(s))).sort((a,b)=>b[3]-a[3]);
+  const what = kind === 'j' ? 'journal papers' : 'conference papers';
+  document.getElementById('count').textContent = `${list.length} of ${all.length} ${what}`;
+  document.getElementById('pubs').innerHTML = list.map(p => `
+    <li><span class="y">${p[3]}</span><div>
+      <div class="t">${esc(p[1])}</div>
+      <div class="a">${esc(p[0])}</div>
+      <div class="v">${esc(p[2])}</div>
+      ${p[4] ? `<a href="https://doi.org/${esc(p[4])}">doi:${esc(p[4])}</a>` : ''}
+    </div></li>`).join('') || '<li><span></span><div class="a">No publications match your search.</div></li>';
+}
+setTab(kind);
+</script>
+</body>
+</html>
