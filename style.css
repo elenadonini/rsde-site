@@ -311,3 +311,15 @@
   .flinks .ft{flex-direction:column;align-items:flex-start;border-left:1px solid rgba(255,255,255,.25);padding-left:28px;line-height:1.15}
   .flinks .ft span{color:#fff;font-size:22px;font-weight:600}
   .flinks .ft small{color:#aab6c4;font-size:13px;margin-top:3px}
+
+  /* Hero slider (replaces the mosaic) */
+  .slider{position:relative;aspect-ratio:21/9;border-radius:18px;overflow:hidden;background:#0b1622;margin:0 0 40px;box-shadow:0 18px 40px rgba(15,27,42,.15)}
+  @media(max-width:700px){.slider{aspect-ratio:4/3}}
+  .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s ease}
+  .slide.on{opacity:1}
+  .slide img{width:100%;height:100%;object-fit:cover}
+  .slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 28px 22px;color:#fff;font-size:17px;font-weight:500;background:linear-gradient(transparent,rgba(5,12,20,.8))}
+  .slide figcaption span{display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#bfe0ff;margin-bottom:4px}
+  .sdots{position:absolute;right:22px;bottom:24px;display:flex;gap:8px;z-index:2}
+  .sdots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.45);cursor:pointer;transition:all .2s}
+  .sdots button.on{background:#fff;width:24px;border-radius:5px}
