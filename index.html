@@ -111,7 +111,7 @@ window.addEventListener('error',function(e){var t=e.target;
   .hero{padding:72px 0 40px;background:
      radial-gradient(1200px 500px at 85% -10%, var(--blue-l), transparent 60%),
      radial-gradient(800px 400px at -10% 110%, var(--earth-l), transparent 60%)}
-  .hero-id{display:flex;align-items:center;gap:22px;margin-bottom:34px}
+  .hero-id{display:flex;align-items:center;gap:22px;margin-bottom:24px}
   .hero-id img{width:clamp(92px,11vw,140px);height:auto;filter:drop-shadow(0 10px 24px rgba(0,104,180,.18))}
   .hero-id .nm{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);line-height:1.5}
   .hero-id .nm b{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:clamp(22px,2.6vw,30px);letter-spacing:0;text-transform:none;color:var(--ink);font-weight:600}
@@ -127,12 +127,13 @@ window.addEventListener('error',function(e){var t=e.target;
   .tag{font-size:13px;padding:5px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink-2)}
   .tag.eo{border-color:#b9d7c9;background:var(--earth-l);color:var(--earth)}
   .tag.se{border-color:#c4d8ec;background:var(--blue-l);color:var(--blue-d)}
-  .showcase{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:48px}
-  .showcase figure{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:#0b1622;aspect-ratio:4/3}
+  .showcase{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px;margin:0 0 36px}
+  .showcase figure{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:#0b1622}
+  .showcase figure.big{grid-column:span 2;grid-row:span 2}
   .showcase img{width:100%;height:100%;object-fit:cover}
   .showcase figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;font-size:12px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
-  @media(max-width:900px){.showcase{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:560px){.showcase{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:900px){.showcase{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}}
+  @media(max-width:560px){.showcase{grid-auto-rows:110px}}
 
   /* Sections */
   section{padding:84px 0;border-top:1px solid var(--line)}
@@ -199,6 +200,7 @@ window.addEventListener('error',function(e){var t=e.target;
   ol.pubs .a{color:var(--ink-2);font-size:14px}
   ol.pubs .v{font-style:italic;font-size:14px;color:var(--ink-2)}
   ol.pubs a{font-family:"IBM Plex Mono",monospace;font-size:12px}
+  .pub-tools[hidden]{display:none}
   .count{font-size:13px;color:var(--ink-2);margin:0 0 6px}
 
   /* Team */
@@ -211,6 +213,11 @@ window.addEventListener('error',function(e){var t=e.target;
   .person h4{margin:12px 0 2px;font-size:16px}
   .person p{margin:0;font-size:14px;color:var(--ink-2)}
 
+  #people .subhead{margin-top:36px}
+  #people .subhead:first-child{margin-top:0}
+  .chips-people{display:flex;flex-wrap:wrap;gap:10px}
+  .pc{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--ink-2)}
+  .pc b{color:var(--ink);font-weight:600;margin-right:4px}
   /* News */
   .news{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:900px){.news{grid-template-columns:1fr}}
@@ -219,7 +226,7 @@ window.addEventListener('error',function(e){var t=e.target;
   .news a.card:hover{border-color:var(--blue)}
 
   /* Contact */
-  .contact{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+  .contact{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
   @media(max-width:800px){.contact{grid-template-columns:1fr}}
   .contact address{font-style:normal;font-size:19px;line-height:1.6}
   .contact .links{display:flex;flex-direction:column;gap:10px;margin-top:22px}
@@ -271,7 +278,14 @@ window.addEventListener('error',function(e){var t=e.target;
       <img src="img/cropped-RSDE_Planet_colour_transparent-270x270.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/01/cropped-RSDE_Planet_colour_transparent-270x270.png" alt="RSDE logo">
       <div class="nm"><b>Remote Sensing for Digital Earth</b>RSDE · Digital Society Center · FBK</div>
     </div>
-    <h1>Reading the Earth, and other worlds, from <em>above</em>.</h1>
+    <div class="showcase">
+      <figure class="big"><img loading="lazy" src="img/MicrosoftTeams-image-46-627x376.jpg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/01/MicrosoftTeams-image-46-627x376.jpg" alt="CCI HRLC Phase-2 kick-off"><figcaption>ESA CCI HRLC Phase-2 kick-off</figcaption></figure>
+      <figure><img loading="lazy" src="img/IMG_4627-627x375.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/01/IMG_4627-627x375.png" alt="EnVision adoption"><figcaption>EnVision: green light for Venus</figcaption></figure>
+      <figure><img loading="lazy" src="img/RIME2023_scene002logounitn_cut.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/03/RIME2023_scene002logounitn_cut.gif" alt="RIME on Ganymede"><figcaption>RIME on Ganymede · JUICE</figcaption></figure>
+      <figure><img loading="lazy" src="img/scene3_amazon_cd_deforestation_v9_0001-1500-ezgif.com-speed.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/03/scene3_amazon_cd_deforestation_v9_0001-1500-ezgif.com-speed.gif" alt="Deforestation in Amazonia"><figcaption>Deforestation, Amazonia</figcaption></figure>
+      <figure><img loading="lazy" src="img/palermo_BA-627x376.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/08/palermo_BA-627x376.png" alt="Burned area Palermo"><figcaption>Fires: Rhodes, Corfu, Palermo</figcaption></figure>
+    </div>
+
     <p class="lead">We develop machine learning and signal processing methods that turn satellite, airborne and planetary radar data into knowledge about climate, land, water and the subsurface of other worlds.</p>
     <div class="btns">
       <a class="btn primary" href="#work">Explore our work</a>
@@ -284,15 +298,6 @@ window.addEventListener('error',function(e){var t=e.target;
       <span class="tag">Change Detection</span>
       <span class="tag">Radar Sounders</span>
       <span class="tag">Climate Change</span>
-    </div>
-
-    <div class="showcase">
-      <figure><img loading="lazy" src="img/scene3_amazon_cd_deforestation_v9_0001-1500-ezgif.com-speed.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/03/scene3_amazon_cd_deforestation_v9_0001-1500-ezgif.com-speed.gif" alt="Land cover change detection in Amazonia"><figcaption>Deforestation, Amazonia · CCI HRLC</figcaption></figure>
-      <figure><img loading="lazy" src="img/3lakes_TSM_only_maps.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/03/3lakes_TSM_only_maps.gif" alt="Total suspended matter in Lake Garda"><figcaption>Water quality, Lake Garda</figcaption></figure>
-      <figure><img loading="lazy" src="img/ice_layers_verticale.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/04/ice_layers_verticale.gif" alt="Ice subsurface segmentation"><figcaption>Ice layers, Antarctica</figcaption></figure>
-      <figure><img loading="lazy" src="img/burned_area_trk.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/04/burned_area_trk.gif" alt="Burned area tracking"><figcaption>Wildfires, Rhodes & Corfu</figcaption></figure>
-      <figure><img loading="lazy" src="img/RIME2023_scene002logounitn_cut.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/03/RIME2023_scene002logounitn_cut.gif" alt="RIME radar sounder on Ganymede"><figcaption>RIME on Ganymede · JUICE</figcaption></figure>
-      <figure><img loading="lazy" src="img/IIMEO_GIF_crop.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/04/IIMEO_GIF_crop.gif" alt="SAR obstacle detection on railways"><figcaption>Railway monitoring · IIMEO</figcaption></figure>
     </div>
   </div>
 </div>
@@ -331,7 +336,7 @@ window.addEventListener('error',function(e){var t=e.target;
         <p class="subhead">Approach</p>
         <div class="steps">
           <div class="step"><b>Research</b><p>New methods for multitemporal, multisensor image analysis: change detection, segmentation, domain adaptation.</p></div>
-          <div class="step"><b>Develop</b><p>End-to-end processing chains, from raw satellite, airborne and radar sounder data to maps and climate variables.</p></div>
+          <div class="step"><b>Develop</b><p>End-to-end processing chains, from raw satellite and airborne data to maps and climate variables.</p></div>
           <div class="step"><b>Apply</b><p>Climate services, agriculture, forestry, infrastructures, civil protection and planetary science missions.</p></div>
         </div>
       </div>
@@ -371,7 +376,7 @@ window.addEventListener('error',function(e){var t=e.target;
         <div class="body">
           <span class="k">04 · Open</span>
           <h3>Open & crowdsourced data</h3>
-          <p>With the <a href="https://dcl.fbk.eu/">Digital Commons Lab</a>, we combine satellite imagery with OpenStreetMap and open geodata.</p>
+          <p>We combine satellite imagery with OpenStreetMap and open geodata.</p>
           <ul><li>Semantic segmentation with noisy labels</li><li>Map updating</li><li>Disaster impact assessment</li></ul>
         </div>
       </article>
@@ -381,14 +386,6 @@ window.addEventListener('error',function(e){var t=e.target;
       <strong>Application areas</strong>
       <span class="pill g">Precision agriculture</span><span class="pill g">Forestry</span><span class="pill g">Water resources</span>
       <span class="pill">Infrastructure monitoring</span><span class="pill">Civil protection</span><span class="pill">Climate services</span>
-    </div>
-
-    <div class="callout">
-      <div>
-        <h3>Working on a proposal?</h3>
-        <p>We take part in ESA, ASI, Horizon Europe and national calls. If you need expertise in Earth observation, SAR or radar sounder data analysis, let's talk.</p>
-      </div>
-      <a class="btn" href="#contact">Talk to us about a call</a>
     </div>
   </div>
 </section>
@@ -486,13 +483,14 @@ window.addEventListener('error',function(e){var t=e.target;
 <section id="publications" class="alt">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">04</span><h2>Publications</h2></div>
-    <p class="sec-intro">Selected journal papers, most recent first. Search by title, author, venue or keyword.</p>
-    <div class="pub-tools">
+    <p class="sec-intro">Journal papers, most recent first. Search by title, author, venue or keyword. The complete list, including conference papers, is on <a href="https://scholar.google.com/citations?hl=en&amp;user=40YiUvoAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar</a>.</p>
+    <div class="pub-tools" id="pubtools" hidden>
       <input id="q" type="search" placeholder="Search publications… (e.g. change detection, radar sounder, Sentinel-2)">
       <div class="chips" id="years"></div>
     </div>
     <p class="count" id="count"></p>
     <ol class="pubs" id="pubs"></ol>
+    <div style="margin-top:24px"><button class="btn ghost" id="pubtoggle" type="button" style="cursor:pointer;font:inherit;font-weight:600"></button></div>
   </div>
 </section>
 
@@ -500,8 +498,8 @@ window.addEventListener('error',function(e){var t=e.target;
 <section id="team">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">05</span><h2>Team</h2></div>
-    <p class="sec-intro">Researchers and PhD students, working with undergraduate and Master's students from the University of Trento and beyond.</p>
-    <div class="team" id="people"></div>
+    <p class="sec-intro">Researchers, PhD students, visiting researchers, interns and students from the University of Trento and beyond.</p>
+    <div id="people"></div>
 
     <div class="sub">
       <h3>Formerly @RSDE</h3>
@@ -549,18 +547,11 @@ window.addEventListener('error',function(e){var t=e.target;
           Via Sommarive 18, 38123 Povo, Trento, Italy
         </address>
         <div class="links">
+          <span>Head of Unit: <strong>Francesca Bovolo</strong> · <a href="mailto:bovolo@fbk.eu">bovolo@fbk.eu</a></span>
           <span>Phone: <a href="tel:+390461314503">+39 0461 314503</a></span>
           <a href="https://www.google.com/maps/d/viewer?mid=1HHlC1KAeOg2_l9m0GppSb4Nsdca0VQw">Open map →</a>
           <a href="https://digis.fbk.eu/">Digital Society Center →</a>
           <a href="https://www.fbk.eu/">Fondazione Bruno Kessler →</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="body">
-          <span class="k">Sister unit</span>
-          <h3>Digital Commons Lab</h3>
-          <p>We collaborate with DCL on open data, OpenStreetMap and geospatial tools.</p>
-          <p style="margin-top:10px"><a href="https://dcl.fbk.eu/">dcl.fbk.eu →</a></p>
         </div>
       </div>
     </div>
@@ -576,7 +567,7 @@ window.addEventListener('error',function(e){var t=e.target;
     </div>
     <div>
       <div style="color:#fff;font-weight:600;margin-bottom:6px">Quick links</div>
-      <a href="https://www.fbk.eu/">FBK</a> · <a href="https://digis.fbk.eu/">Digital Society</a> · <a href="https://dcl.fbk.eu/">DCL</a> · <a href="https://most.fbk.eu/">MoST</a><br>
+      <a href="https://www.fbk.eu/">FBK</a> · <a href="https://digis.fbk.eu/">Digital Society</a><br>
       <a href="#top">Back to top ↑</a>
     </div>
   </div>
@@ -585,11 +576,27 @@ window.addEventListener('error',function(e){var t=e.target;
 <script>
 /* ---------- DATA: edit here ---------- */
 const PEOPLE = [
-  {n:"Francesca Bovolo", r:"Head of Unit", u:"bovolo"},
-  {n:"Massimo Zanetti", r:"Researcher", u:"mazanetti"},
-  {n:"Elena Donini", r:"Researcher", u:"edonini"},
-  {n:"Luca Bergamasco", r:"Researcher", u:"lbergamasco"},
-  {n:"Milena Atanasova", r:"PhD student", u:"matanasova"}
+  // g: staff | phd | visiting | interns   ·   u: FBK username for the photo (optional, otherwise initials are shown)
+  {n:"Francesca Bovolo", r:"Head of Unit", g:"staff", u:"bovolo"},
+  {n:"Luca Bergamasco", r:"Researcher", g:"staff", u:"lbergamasco"},
+  {n:"Elena Donini", r:"Researcher", g:"staff", u:"edonini"},
+  {n:"James William Fleming", r:"Researcher", g:"staff"},
+  {n:"Massimo Zanetti", r:"Researcher", g:"staff", u:"mazanetti"},
+  {n:"Margarret Ashmitha Antony Ravi", r:"PhD student", g:"phd"},
+  {n:"Milena Atanasova", r:"PhD student", g:"phd", u:"matanasova"},
+  {n:"Sonia Borsi", r:"PhD student", g:"phd"},
+  {n:"Dario Carretta", r:"PhD student", g:"phd"},
+  {n:"Anurupa Goswami", r:"PhD student", g:"phd"},
+  {n:"Miguel Hoyo García", r:"Visiting fellow", g:"visiting"},
+  {n:"Hengyi Zheng", r:"Visiting PhD student", g:"visiting"},
+  {n:"Tabassum Binte Awal", r:"Intern", g:"interns"},
+  {n:"Simone Reigl", r:"Intern", g:"interns"},
+  {n:"Alessandro Sellani", r:"Intern", g:"interns"},
+  {n:"Alessandro Turri", r:"Intern", g:"interns"},
+  {n:"Mattia Barborini", r:"Student", g:"interns"},
+  {n:"Andrea Blushi", r:"Student", g:"interns"},
+  {n:"Mathias Bruni", r:"Student", g:"interns"},
+  {n:"Luca Civera", r:"Student", g:"interns"}
 ];
 const FORMER = [
   {n:"Milad Niroumand-Jadidi", t:"Water quality and parameter estimation via remote sensing"},
@@ -602,38 +609,71 @@ const FORMER = [
   {n:"Youkyung Han", t:"Registration noise and coregistration of VHR multitemporal images"}
 ];
 const PUBS = [
-  ["Bergamasco L., Bovolo F., Bruzzone L.","A Dual-Branch Deep Learning Architecture for Multisensor and Multitemporal Remote Sensing Semantic Segmentation","IEEE JSTARS",2023,"10.1109/JSTARS.2023.3243396"],
-  ["Bergamasco L., Saha S., Bovolo F., Bruzzone L.","Unsupervised Change Detection Using Convolutional-Autoencoder Multi-resolution Features","IEEE TGRS",2022,"10.1109/TGRS.2022.3140404"],
-  ["Solano-Correa Y.T., Meshkini K., Bovolo F., Bruzzone L.","Automatic Large-Scale Precise Mapping and Monitoring of Agricultural Fields at Country Level with Sentinel-2 SITS","IEEE JSTARS",2022,"10.1109/JSTARS.2022.3164547"],
-  ["Niroumand-Jadidi M., Legleiter C.J., Bovolo F.","River Bathymetry Retrieval From Landsat-9 Images Based on Neural Networks and Comparison to SuperDove and Sentinel-2","IEEE JSTARS",2022,"10.1109/JSTARS.2022.3187179"],
-  ["Niroumand-Jadidi M., Bovolo F., Bresciani M., Gege P., Giardino C.","Water Quality Retrieval from Landsat-9 (OLI-2) Imagery and Comparison to Sentinel-2","Remote Sensing",2022,"10.3390/rs14184596"],
-  ["Niroumand-Jadidi M., Legleiter C.J., Bovolo F.","Bathymetry retrieval from CubeSat image sequences with short time lags","Int. J. Applied Earth Observation and Geoinformation",2022,"10.1016/j.jag.2022.102958"],
-  ["Ghosh R., Bovolo F.","TransSounder: A Hybrid TransUNet-TransFuse Architectural Framework for Semantic Segmentation of Radar Sounder Data","IEEE TGRS",2022,"10.1109/TGRS.2022.3180761"],
-  ["Harikumar A., Liang X., Bovolo F., Bruzzone L.","Void-volume based Stem Geometric Modelling and Branch-knot Localization in Terrestrial Laser Scanning Data","IEEE JSTARS",2022,"10.1109/JSTARS.2022.3163404"],
-  ["Mou L., Saha S., Bovolo F., Bruzzone L., Zhu X.X.","Detecting Changes by Learning No Changes: Data-enclosing-ball Minimizing Autoencoders for One-class Change Detection in Multispectral Imagery","IEEE TGRS",2022,"10.1109/TGRS.2022.3200985"],
-  ["Ren L., Ma Z., Bovolo F., Hu J., Bruzzone L.","Hyperspectral unmixing using weighted sparse regression with total variation regularization","Int. J. Remote Sensing",2022,"10.1080/01431161.2021.2018151"],
-  ["Saha S., Bovolo F., Bruzzone L.","Change Detection in Image Time-Series Using Unsupervised LSTM","IEEE GRSL",2022,"10.1109/lgrs.2020.3043822"],
-  ["Mou L., Saha S., Hua Y., Bovolo F., Bruzzone L., Zhu X.X.","Deep Reinforcement Learning for Band Selection in Hyperspectral Image Classification","IEEE TGRS",2022,"10.1109/TGRS.2021.3067096"],
-  ["Belenguer-Plomer M.A., Tanase M.A., Chuvieco E., Bovolo F.","CNN-based burned area mapping using radar and optical data","Remote Sensing of Environment",2021,"10.1016/j.rse.2021.112468"],
-  ["Donini E., Bovolo F., Bruzzone L.","A Deep Learning Architecture for Semantic Segmentation of Radar Sounder Data","IEEE TGRS",2021,"10.1109/TGRS.2021.3125773"],
-  ["Niroumand-Jadidi M., Bovolo F., Bruzzone L., Gege P.","Inter-Comparison of Methods for Chlorophyll-a Retrieval: Sentinel-2 Time-Series Analysis in Italian Lakes","Remote Sensing",2021,"10.3390/rs13122381"],
-  ["Chirakkal S., Bovolo F., Misra A.R., Bruzzone L., Bhattacharya A.","A General Framework for Change Detection Using Multi-modal Remote Sensing Data","IEEE JSTARS",2021,"10.1109/JSTARS.2021.3119358"],
-  ["Harikumar A., Paris C., Bovolo F., Bruzzone L.","A Crown Quantization-Based Approach to Tree-Species Classification Using High-Density Airborne Laser Scanning Data","IEEE TGRS",2021,"10.1109/tgrs.2020.3012343"],
-  ["Zanetti M., Saha S., Marinelli D., Magliozzi M.L., Zavagli M., Costantini M., Bovolo F., Bruzzone L.","A System for Burned Area Detection on Multispectral Imagery","IEEE TGRS",2021,"10.1109/TGRS.2021.3110280"],
-  ["Saha S., Solano-Correa Y.T., Bovolo F., Bruzzone L.","Unsupervised Deep Transfer Learning-Based Change Detection for HR Multispectral Images","IEEE GRSL",2021,"10.1109/LGRS.2020.2990284"],
-  ["Saha S., Mou L., Zhu X.X., Bovolo F., Bruzzone L.","Semisupervised Change Detection Using Graph Convolutional Network","IEEE GRSL",2021,"10.1109/LGRS.2020.2985340"],
-  ["Donini E., Carrer L., Gerekos C., Bruzzone L., Bovolo F.","An Unsupervised Fuzzy System for the Automatic Detection of Candidate Lava Tubes in Radar Sounder Data","IEEE TGRS",2021,"10.1109/TGRS.2021.3062753"]
+  ["N. Neela, B. N. Subudhi, F. Bovolo, L. Bruzzone", "A Review of Band Selection in Hyperspectral Imaging: From Classical Heuristics to Deep Learning Challenges", "PFG – Journal of Photogrammetry, Remote Sensing and Geoinformation Science", 2026, "10.1007/s41064-026-00425-7"],
+  ["M. Atanasova, L. Bergamasco, F. Bovolo", "Agricultural Field Crop Type Semantic Segmentation and Boundary Extraction from Sentinel-2 Time Series Using Multitask Learning with Directional Feature-Sharing", "Remote Sensing (MDPI)", 2026, "10.3390/rs18162720"],
+  ["M. Atanasova, L. Bergamasco, F. Bovolo", "A Multitask Framework with Cross-task Selective Feature Sharing for Remote Sensing Image Time Series Analysis", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2026, "10.1109/JSTARS.2026.3673598"],
+  ["S. Liu, K. Du, L. Bruzzone, Q. Du, F. Bovolo, X. Tong", "An Adaptive Pseudo-Labeled Sample Generation Approach to Unsupervised Multi-class Change Detection in Bi-temporal Remote Sensing Images", "IEEE Transactions on Geoscience and Remote Sensing", 2026, ""],
+  ["R. Ghosh, A. Delilbasic, G. Cavallaro, F. Bovolo", "Leveraging a Hybrid Quantum-Classical Framework for Subsurface Target Detection in Radar Sounding System: Challenges and Opportunities", "IEEE Transactions on Geoscience and Remote Sensing", 2025, "10.1109/TGRS.2025.3625080"],
+  ["I. A. Listiani, M. Zanetti, F. Bovolo", "Time Series Change Vector Analysis for Semi-Supervised Abrupt Land Cover Change Detection", "IEEE Transactions on Geoscience and Remote Sensing", 2025, "10.1109/TGRS.2025.3615291"],
+  ["L. Bergamasco, F. Bovolo", "XChange: An Explainable Dynamic Convolutional Autoencoder for Unsupervised Change Detection", "IEEE Transactions on Geoscience and Remote Sensing", 2025, "10.1109/TGRS.2025.3606297"],
+  ["Y. Shen, F. Bovolo, Y. Wei, X. Rui", "Progressive Self-Optimization Network: An unsupervised change detection method for VHR optical remote sensing imagery", "International Journal of Applied Earth Observation and Geoinformation", 2025, "10.1016/j.jag.2025.104792"],
+  ["M. Niroumand-Jadidi, C. Legleiter, F. Bovolo", "Neural Network-Based Temporal Ensembling of Water Depth Estimates Derived from SuperDove Images", "Remote Sensing (MDPI)", 2025, "10.3390/rs17071309"],
+  ["M. Usmani, H. M. T. Bhatti, F. Bovolo, M. Napolitano, R. Nanni", "Flood Mapping and Impact Analysis by Fusion of Remote Sensing and Open Geospatial Data: Sindh Case Study", "The Egyptian Journal of Remote Sensing and Space Sciences", 2025, ""],
+  ["Z. Yin, Y. Tang, F. Bovolo", "Sea Ice Semantic Segmentation with Optical Data Based on Adaptive Sample Training of Cross-Attention ResUNet", "IEEE Geoscience and Remote Sensing Letters", 2025, "10.1109/LGRS.2025.3546322"],
+  ["L. Bergamasco, F. Bovolo, L. Bruzzone", "Multiscale Hierarchical Losses to Preserve Hidden-Layer Features for Unsupervised Change Detection", "IEEE Transactions on Geoscience and Remote Sensing", 2024, "10.1109/TGRS.2024.3438465"],
+  ["R. Ghosh, F. Bovolo", "URS: An Unsupervised Radargram Segmentation Network based on Self-supervised ViT with Contrastive Feature Learning Framework", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2024, ""],
+  ["K. Meshkini, Y. T. Solano-Correa, F. Bovolo, L. Bruzzone", "Multi-annual Change Detection in Long and Dense Satellite Image Time Series based on Dynamic Time Warping", "IEEE Transactions on Geoscience and Remote Sensing", 2024, "10.1109/TGRS.2024.3431631"],
+  ["F. Tosi, T. Roatsch, A. Galli, … F. Bovolo, … L. Bruzzone, … et al.", "Characterization of the surfaces and near-surface atmospheres of Ganymede, Europa and Callisto by JUICE", "Space Science Reviews", 2024, "10.1007/s11214-024-01089-8"],
+  ["T. Van Hoolst, G. Tobie, C. Vallat, … F. Bovolo, … et al.", "Geophysical characterization of the interiors of Ganymede, Callisto and Europa by ESA's Jupiter ICy moons Explorer", "Space Science Reviews", 2024, "10.1007/s11214-024-01085-y"],
+  ["E. Donini, L. Bruzzone, F. Bovolo", "Super-Resolution of Radargrams with a Generative Deep Learning Model", "IEEE Transactions on Geoscience and Remote Sensing", 2024, ""],
+  ["K. Meshkini, F. Bovolo, L. Bruzzone", "Multi-Annual Change Detection Using a Weakly Supervised 3D CNN in HR SITS", "IEEE Geoscience and Remote Sensing Letters", 2024, "10.1109/LGRS.2024.3359819"],
+  ["T. Kim, Y. Yun, C. Lee, F. Bovolo, Y. Han", "FMPR-Net: False Matching Point Removal Network for Very-High-Resolution Satellite Image Registration", "IEEE Transactions on Geoscience and Remote Sensing", 2023, "10.1109/TGRS.2023.3333811"],
+  ["M. Usmani, F. Bovolo, M. Napolitano", "Remote sensing and deep learning to understand noisy OpenStreetMap", "Remote Sensing (MDPI)", 2023, "10.3390/rs15184639"],
+  ["S. Zaghian, A. Mohammadzadeh, A. Ghorbanian, F. Bovolo, M. Niroumand-Jadidi", "Enhancing Suspended Sediment Concentration Retrieval by Integrating Thermal Infrared and Optical Bands of Landsat-8 and Machine Learning Algorithms", "International Journal of Remote Sensing", 2023, "10.1080/01431161.2023.2255350"],
+  ["M. Niroumand-Jadidi, F. Bovolo", "Deep Learning based Retrieval of an Orange Band Sensitive to Cyanobacteria for Landsat 8/9 and Sentinel 2", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2023, "10.1109/JSTARS.2023.3266929"],
+  ["M. Hoyo-García, E. Donini, F. Bovolo", "Weakly Supervised Transfer Learning Approach for Radar Sounder Data Segmentation", "IEEE Transactions on Geoscience and Remote Sensing", 2023, "10.1109/TGRS.2023.3252939"],
+  ["L. Bergamasco, F. Bovolo, L. Bruzzone", "A Dual-Branch Deep Learning Architecture for Multisensor and Multitemporal Remote Sensing Semantic Segmentation", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2023, "10.1109/JSTARS.2023.3243396"],
+  ["M. Usmani, M. Napolitano, F. Bovolo", "Towards Global Scale Semantic Segmentation with OpenStreetMap and Remote Sensing", "ISPRS Open Journal of Photogrammetry and Remote Sensing", 2023, "10.1016/j.ophoto.2023.100031"],
+  ["M. Niroumand-Jadidi, F. Bovolo, M. Bresciani, P. Gege, C. Giardino", "Water Quality Retrieval from Landsat-9 (OLI-2) Imagery and Comparison to Sentinel-2", "Remote Sensing (MDPI)", 2022, "10.3390/rs14184596"],
+  ["M. Niroumand-Jadidi, C. J. Legleiter, F. Bovolo", "Bathymetry retrieval from CubeSat image sequences with short time lags", "International Journal of Applied Earth Observation and Geoinformation", 2022, "10.1016/j.jag.2022.102958"],
+  ["L. Mou, Y. Hua, S. Saha, F. Bovolo, L. Bruzzone, X. X. Zhu", "Detecting Changes by Learning No Changes: Data-enclosing-ball Minimizing Autoencoders for One-class Change Detection in Multispectral Imagery", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2022.3200985"],
+  ["M. Niroumand-Jadidi, C. J. Legleiter, F. Bovolo", "River Bathymetry Retrieval From Landsat-9 Images Based on Neural Networks and Comparison to SuperDove and Sentinel-2", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2022, "10.1109/JSTARS.2022.3187179"],
+  ["R. Ghosh, F. Bovolo", "TransSounder: A Hybrid TransUNet-TransFuse Architectural Framework for Semantic Segmentation of Radar Sounder Data", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2022.3180761"],
+  ["Y. T. Solano-Correa, K. Meshkini, F. Bovolo, L. Bruzzone", "Automatic Large-Scale Precise Mapping and Monitoring of Agricultural Fields at Country Level with Sentinel-2 SITS", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2022, "10.1109/JSTARS.2022.3164547"],
+  ["A. Harikumar, X. Liang, F. Bovolo, L. Bruzzone", "Void-volume based Stem Geometric Modelling and Branch-knot Localization in Terrestrial Laser Scanning Data", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2022, "10.1109/JSTARS.2022.3163404"],
+  ["L. Bergamasco, S. Saha, F. Bovolo, L. Bruzzone", "Unsupervised Change Detection Using Convolutional-Autoencoder Multi-resolution Features", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2022.3140404"],
+  ["L. Ren, Z. Ma, F. Bovolo, J. Hu, L. Bruzzone", "Hyperspectral Unmixing Using Weighted Sparse Regression with Total Variation Regularization", "International Journal of Remote Sensing", 2022, "10.1080/01431161.2021.2018151"],
+  ["E. Donini, L. Carrer, C. Gerekos, L. Bruzzone, F. Bovolo", "An Unsupervised Fuzzy System for the Automatic Detection of Candidate Lava Tubes in Radar Sounder Data", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2021.3062753"],
+  ["E. Donini, F. Bovolo, L. Bruzzone", "A Deep Learning Architecture for Semantic Segmentation of Radar Sounder Data", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2021.3125773"],
+  ["S. Thakur, E. Donini, F. Bovolo, L. Bruzzone", "An Approach to the Assessment of Detectability of Subsurface Targets in Polar Ice from Satellite Radar Sounder", "IEEE Transactions on Geoscience and Remote Sensing", 2022, ""],
+  ["M. Zanetti, S. Saha, D. Marinelli, M. L. Magliozzi, M. Zavagli, M. Costantini, F. Bovolo, L. Bruzzone", "A System for Burned Area Detection on Multispectral Imagery", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2021.3110280"],
+  ["D. Wen, X. Huang, F. Bovolo, J. Li, X. Ke, A. Zhang, J. A. Benediktsson", "Change Detection From Very-High-Spatial-Resolution Optical Remote Sensing Images: Methods, applications, and future directions", "IEEE Geoscience and Remote Sensing Magazine", 2022, "10.1109/MGRS.2021.3063465"],
+  ["L. Ren, Z. Ma, F. Bovolo, L. Bruzzone", "A Nonconvex Framework for Sparse Unmixing Incorporating the Group Structure of the Spectral Library", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2021.3081101"],
+  ["L. Mou, S. Saha, Y. Hua, F. Bovolo, L. Bruzzone, X. X. Zhu", "Deep Reinforcement Learning for Band Selection in Hyperspectral Image Classification", "IEEE Transactions on Geoscience and Remote Sensing", 2022, "10.1109/TGRS.2021.3067096"],
+  ["S. Saha, F. Bovolo, L. Bruzzone", "Change Detection in Image Time-Series Using Unsupervised LSTM", "IEEE Geoscience and Remote Sensing Letters", 2022, "10.1109/LGRS.2020.3043822"],
+  ["M. A. Belenguer-Plomer, M. A. Tanase, E. Chuvieco, F. Bovolo", "CNN-based burned area mapping using radar and optical data", "Remote Sensing of Environment", 2021, "10.1016/j.rse.2021.112468"],
+  ["M. Niroumand-Jadidi, F. Bovolo, L. Bruzzone, P. Gege", "Inter-Comparison of Methods for Chlorophyll-a Retrieval: Sentinel-2 Time-Series Analysis in Italian Lakes", "Remote Sensing (MDPI)", 2021, "10.3390/rs13122381"],
+  ["S. Chirakkal, F. Bovolo, A. R. Misra, L. Bruzzone, A. Bhattacharya", "A General Framework for Change Detection Using Multi-modal Remote Sensing Data", "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", 2021, "10.1109/JSTARS.2021.3119358"],
+  ["A. Harikumar, C. Paris, F. Bovolo, L. Bruzzone", "A Crown Quantization-Based Approach to Tree-Species Classification Using High-Density Airborne Laser Scanning Data", "IEEE Transactions on Geoscience and Remote Sensing", 2021, "10.1109/tgrs.2020.3012343"],
+  ["S. Saha, Y. T. Solano-Correa, F. Bovolo, L. Bruzzone", "Unsupervised Deep Transfer Learning-Based Change Detection for HR Multispectral Images", "IEEE Geoscience and Remote Sensing Letters", 2021, "10.1109/LGRS.2020.2990284"],
+  ["S. Saha, L. Mou, X. X. Zhu, F. Bovolo, L. Bruzzone", "Semisupervised Change Detection Using Graph Convolutional Network", "IEEE Geoscience and Remote Sensing Letters", 2021, "10.1109/LGRS.2020.2985340"]
 ];
 /* ---------- RENDER ---------- */
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const initials = n => n.replace(/,.*$/,'').split(' ').map(w=>w[0]).slice(0,2).join('');
+const initials = n => { const w = n.replace(/,.*$/,'').trim().split(/\s+/); return (w[0][0] + (w.length>1 ? w[w.length-1][0] : '')).toUpperCase(); };
 
-document.getElementById('people').innerHTML = PEOPLE.map(p => `
-  <div class="person">
-    <div class="ph"><img loading="lazy" src="https://my.fbk.eu/fbk-api/v2/picture/${p.u}?w=400&crop=1" alt="${esc(p.n)}"
-      onerror="this.parentNode.textContent='${initials(p.n)}'"></div>
-    <h4>${esc(p.n)}</h4><p>${esc(p.r)}</p>
-  </div>`).join('');
+const GROUPS = [["staff","Head of Unit & researchers"],["phd","PhD students"],["visiting","Visiting researchers"],["interns","Interns & students"]];
+const photo = p => p.u
+  ? `<img loading="lazy" src="https://my.fbk.eu/fbk-api/v2/picture/${p.u}?w=400&crop=1" alt="${esc(p.n)}" onerror="this.parentNode.textContent='${initials(p.n)}'">`
+  : initials(p.n);
+document.getElementById('people').innerHTML = GROUPS.map(([g,label]) => {
+  const ps = PEOPLE.filter(p => p.g === g); if (!ps.length) return '';
+  if (g === 'interns') return `<p class="subhead">${label}</p>
+    <div class="chips-people">${ps.map(p => `<span class="pc"><b>${esc(p.n)}</b> ${esc(p.r)}</span>`).join('')}</div>`;
+  return `<p class="subhead">${label}</p>
+    <div class="team">${ps.map(p => `
+      <div class="person"><div class="ph">${photo(p)}</div><h4>${esc(p.n)}</h4><p>${esc(p.r)}</p></div>`).join('')}</div>`;
+}).join('');
 
 document.getElementById('former').innerHTML = FORMER.map(p => `
   <div class="mini"><span class="k">Former member</span><h4>${esc(p.n)}</h4><p>${esc(p.t)}</p></div>`).join('');
@@ -648,17 +688,30 @@ yEl.addEventListener('click', e => {
 });
 const q = document.getElementById('q');
 q.addEventListener('input', renderPubs);
+const LATEST = 5;
+let showAll = false;
+const tog = document.getElementById('pubtoggle'), tools = document.getElementById('pubtools');
+tog.addEventListener('click', () => {
+  showAll = !showAll; tools.hidden = !showAll;
+  if (!showAll) { q.value = ''; yr = 'All'; yEl.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on', c.dataset.y==='All'));
+    document.getElementById('publications').scrollIntoView({behavior:'smooth'}); }
+  renderPubs();
+});
 function renderPubs(){
   const s = q.value.trim().toLowerCase();
-  const list = PUBS.filter(p => (yr==='All' || String(p[3])===yr) && (!s || p.join(' ').toLowerCase().includes(s)))
-                   .sort((a,b)=>b[3]-a[3]);
-  document.getElementById('count').textContent = `${list.length} publication${list.length===1?'':'s'}`;
+  let list = PUBS.filter(p => (yr==='All' || String(p[3])===yr) && (!s || p.join(' ').toLowerCase().includes(s)))
+                 .sort((a,b)=>b[3]-a[3]);
+  if (!showAll) list = list.slice(0, LATEST);
+  document.getElementById('count').textContent = showAll
+    ? `${list.length} of ${PUBS.length} publications`
+    : `Latest ${LATEST} of ${PUBS.length} publications`;
+  tog.textContent = showAll ? 'Show only the latest ↑' : `Show all ${PUBS.length} publications ↓`;
   document.getElementById('pubs').innerHTML = list.map(p => `
     <li><span class="y">${p[3]}</span><div>
       <div class="t">${esc(p[1])}</div>
       <div class="a">${esc(p[0])}</div>
       <div class="v">${esc(p[2])}</div>
-      <a href="https://doi.org/${esc(p[4])}">doi:${esc(p[4])}</a>
+      ${p[4] ? `<a href="https://doi.org/${esc(p[4])}">doi:${esc(p[4])}</a>` : ''}
     </div></li>`).join('');
 }
 renderPubs();
