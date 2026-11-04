@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery · RSDE · FBK</title>
+<meta name="description" content="Remote Sensing for Digital Earth (RSDE) is a research unit of the Digital Society Center at Fondazione Bruno Kessler. We develop methods to analyse remote sensing data for Earth observation and planetary exploration.">
+<meta name="theme-color" content="#0068b4">
+<link rel="icon" href="img/cropped-RSDE_Planet_colour_transparent-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+/* Images are served from ./img/ ; if a file is missing, fall back to the original URL */
+window.addEventListener('error',function(e){var t=e.target;
+  if(t&&t.tagName==='IMG'&&t.dataset.fallback&&!t.dataset.tried){t.dataset.tried='1';t.src=t.dataset.fallback;}},true);
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="https://www.fbk.eu/" title="Fondazione Bruno Kessler"><img src="img/fbk-logo-white.png" data-fallback="https://most.fbk.eu/assets/images/logos/FBK_Logo_Horizontal_white.png" alt="Fondazione Bruno Kessler"></a>
+    <a class="hide-s" href="https://digis.fbk.eu/">Digital Society Center</a>
+    <div class="right">
+      <a class="hide-s" href="index.html#join">Join us</a>
+      <div class="lang"><a class="on" href="/">EN</a><a href="/it/">IT</a></div>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" title="RSDE home">
+      <img src="img/RSDE__Digital-Society_colour.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2022/10/RSDE__Digital-Society_colour.png" alt="RSDE · Digital Society · FBK">
+      <span>Remote Sensing for Digital Earth<br>Digital Society Center · FBK</span>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('nav.main').classList.toggle('open')">☰</button>
+    <nav class="main" onclick="if(event.target.tagName==='A')this.classList.remove('open')">
+      <div class="dd"><a href="index.html#approach">Research</a>
+        <div class="menu"><a href="index.html#approach">What we do</a><a href="index.html#projects">Projects</a><a href="index.html#work">Products & data</a></div>
+      </div>
+      <a href="index.html#publications">Publications</a>
+      <div class="dd"><a href="index.html#team">People</a>
+        <div class="menu"><a href="index.html#team">Team</a><a href="index.html#former">Alumni</a><a href="index.html#join">Join us</a></div>
+      </div>
+      <a href="index.html#latest">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="gal-hero">
+    <span class="sec-num">RSDE</span>
+    <h1>Gallery</h1>
+    <p>Moments from the life of the unit: project meetings, conferences, missions and time together.</p>
+  </div>
+  <div class="gfilters" id="gfilters"></div>
+  <div class="gallery" id="gallery"></div>
+</main>
+
+<dialog id="lightbox" aria-label="Photo viewer">
+  <button class="x" aria-label="Close">×</button>
+  <button class="prev" aria-label="Previous">←</button>
+  <img alt="">
+  <div class="cap"></div>
+  <button class="next" aria-label="Next">→</button>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div style="color:#fff;font-weight:600;margin-bottom:6px">RSDE · Remote Sensing for Digital Earth</div>
+      Developed by RSDE · Fondazione Bruno Kessler<br>
+      Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="https://www.fbk.eu/en/privacy-cookies-policy/">Privacy & cookie policy</a>
+    </div>
+    <div>
+      <div style="color:#fff;font-weight:600;margin-bottom:6px">Quick links</div>
+      <a href="https://www.fbk.eu/">FBK</a> · <a href="https://digis.fbk.eu/">Digital Society</a><br>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- PHOTOS: add your group photos here ----------
+   Put the image files in img/gallery/ and add one line per photo:
+   {src:"img/gallery/name.jpg", title:"…", date:"2025-06", tag:"Events"}
+   tag is used for the filter buttons (e.g. Team, Events, Conferences, Missions). */
+const PHOTOS = [
+  {src:"img/MicrosoftTeams-image-46-627x376.jpg", fallback:"https://rsde.fbk.eu/wp-content/uploads/2024/01/MicrosoftTeams-image-46-627x376.jpg",
+   title:"ESA CCI High Resolution Land Cover, Phase 2 kick-off", date:"January 2024", tag:"Projects"},
+  {src:"img/IMG_4627-627x375.png", fallback:"https://rsde.fbk.eu/wp-content/uploads/2024/01/IMG_4627-627x375.png",
+   title:"ESA adopts the EnVision mission to Venus", date:"January 2024", tag:"Missions"},
+  {src:"img/03-12-GEO-AI-627x376.png", fallback:"https://rsde.fbk.eu/wp-content/uploads/2024/02/03-12-GEO-AI-627x376.png",
+   title:"CCI HRLC products presented at AI for Good", date:"March 2024", tag:"Events"}
+];
+/* ------------------------------------------------------- */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let tag = 'All', shown = [];
+const tags = ['All', ...new Set(PHOTOS.map(p => p.tag).filter(Boolean))];
+const fEl = document.getElementById('gfilters'), gEl = document.getElementById('gallery');
+fEl.innerHTML = tags.length > 2 ? tags.map(t => `<button class="chip${t==='All'?' on':''}" data-t="${esc(t)}">${esc(t)}</button>`).join('') : '';
+fEl.addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return;
+  tag = b.dataset.t; fEl.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b)); render(); });
+function render(){
+  shown = PHOTOS.filter(p => tag === 'All' || p.tag === tag);
+  gEl.innerHTML = shown.length ? shown.map((p,i) => `
+    <figure data-i="${i}"><img loading="lazy" src="${esc(p.src)}" ${p.fallback?`data-fallback="${esc(p.fallback)}"`:''} alt="${esc(p.title||'')}">
+      ${p.title||p.date ? `<figcaption>${p.date?`<span class="d">${esc(p.date)}</span>`:''}<b>${esc(p.title||'')}</b></figcaption>` : ''}</figure>`).join('')
+    : '<div class="gempty">No photos yet.</div>';
+}
+render();
+const lb = document.getElementById('lightbox'); let cur = 0;
+function show(i){ cur = (i + shown.length) % shown.length; const p = shown[cur];
+  const im = lb.querySelector('img'); im.dataset.tried=''; im.dataset.fallback = p.fallback || ''; im.src = p.src; im.alt = p.title || '';
+  lb.querySelector('.cap').textContent = [p.title, p.date].filter(Boolean).join(' · ');
+  if (!lb.open) lb.showModal(); }
+gEl.addEventListener('click', e => { const f = e.target.closest('figure'); if (f) show(+f.dataset.i); });
+lb.querySelector('.prev').onclick = () => show(cur - 1);
+lb.querySelector('.next').onclick = () => show(cur + 1);
+lb.querySelector('.x').onclick = () => lb.close();
+lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+document.addEventListener('keydown', e => { if (!lb.open) return;
+  if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
+</script>
+</body>
+</html>
