@@ -81,15 +81,7 @@ window.addEventListener('error',function(e){var t=e.target;
       <h3><span class="mono" style="color:var(--blue);font-size:14px;font-weight:400">Latest</span>&nbsp; News & events</h3>
       <div class="arrows"><button aria-label="Previous" data-rail="newsrail" data-dir="-1">←</button> <button aria-label="Next" data-rail="newsrail" data-dir="1">→</button></div>
     </div>
-    <div class="rail" id="newsrail">
-      <a class="news-item" href="https://magazine.fbk.eu/en/news/fbk-in-the-worlds-top-2-scientists-2025/"><div class="nthumb"><img loading="lazy" src="img/cropped-RSDE_Planet_colour_transparent-270x270.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/01/cropped-RSDE_Planet_colour_transparent-270x270.png" alt="" style="object-fit:contain;background:#fff"></div><span class="date">10 Nov 2025</span><h4>Francesca Bovolo among the World's Top 2% Scientists</h4><p>The RSDE head is listed in the 2025 ranking.</p></a>
-      <a class="news-item" href="https://rsde.fbk.eu/phd-student-positions-rsde-2024/"><div class="nthumb"><img loading="lazy" src="img/graduation-cap-and-globe-icon-vector-5293774-627x376.jpg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/05/graduation-cap-and-globe-icon-vector-5293774-627x376.jpg" alt=""></div><span class="date">26 Apr 2024</span><h4>PhD student positions @RSDE</h4><p>Looking for motivated candidates with an excellent study career.</p></a>
-      <a class="news-item" href="https://rsde.fbk.eu/esa-cci-hrlc-webinar-aiforgood/"><div class="nthumb"><img loading="lazy" src="img/03-12-GEO-AI-627x376.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/02/03-12-GEO-AI-627x376.png" alt=""></div><span class="date">14 Feb 2024</span><h4>CCI HRLC products at "AI for Good"</h4><p>Webinar on the ESA CCI High Resolution Land Cover maps.</p></a>
-      <a class="news-item" href="https://magazine.fbk.eu/en/news/elena-donini-selected-visiting-scientist-by-esa-archival-research-visitor-programme/"><div class="nthumb"><img loading="lazy" src="img/ice_layers_verticale.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/04/ice_layers_verticale.gif" alt=""></div><span class="date">2 Feb 2024</span><h4>Elena Donini selected as ESA visiting scientist</h4><p>Selecting significant radargrams in large archives for RIME and SRS.</p></a>
-      <a class="news-item" href="https://rsde.fbk.eu/envision-adoption/"><div class="nthumb"><img loading="lazy" src="img/IMG_4627-627x375.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/01/IMG_4627-627x375.png" alt=""></div><span class="date">26 Jan 2024</span><h4>Green light for EnVision</h4><p>ESA formally adopts the mission to Venus.</p></a>
-      <a class="news-item" href="https://rsde.fbk.eu/cc-hrlc-ph2-ko/"><div class="nthumb"><img loading="lazy" src="img/MicrosoftTeams-image-46-627x376.jpg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/01/MicrosoftTeams-image-46-627x376.jpg" alt=""></div><span class="date">19 Jan 2024</span><h4>CCI HRLC Phase 2 kicks off</h4><p>Second phase of the ESA CCI High Resolution Land Cover project.</p></a>
-      <a class="news-item" href="https://rsde.fbk.eu/rhodes-corfu-and-palermos-fires-tracking-burned-area-in-time/"><div class="nthumb"><img loading="lazy" src="img/palermo_BA-627x376.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/08/palermo_BA-627x376.png" alt=""></div><span class="date">1 Aug 2023</span><h4>Rhodes, Corfu and Palermo fires</h4><p>Tracking burned area over time with Sentinel-2.</p></a>
-    </div>
+    <div class="rail" id="newsrail"></div>
   </div>
 </div>
 
@@ -323,6 +315,11 @@ window.addEventListener('error',function(e){var t=e.target;
   </div>
 </section>
 
+<dialog id="newsdlg" class="ndlg" aria-label="News">
+  <button class="pclose" aria-label="Close">×</button>
+  <div class="nbody"></div>
+</dialog>
+
 <dialog id="profile" aria-label="Team member profile">
   <button class="pclose" aria-label="Close">×</button>
   <div class="pbody"></div>
@@ -420,8 +417,131 @@ const FORMER = [
 })();
 
 /* ---------- RENDER ---------- */
+
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const initials = n => { const w = n.replace(/,.*$/,'').trim().split(/\s+/); return (w[0][0] + (w.length>1 ? w[w.length-1][0] : '')).toUpperCase(); };
+
+/* ---------- NEWS: add new items at the top ----------
+   img: file in img/  ·  text: one string per paragraph  ·  link: original article */
+const NEWS = [
+ {
+  "id": "top2-2025",
+  "date": "10 Nov 2025",
+  "title": "Francesca Bovolo among the World's Top 2% Scientists",
+  "img": "cropped-RSDE_Planet_colour_transparent-270x270.png",
+  "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/01/cropped-RSDE_Planet_colour_transparent-270x270.png",
+  "contain": true,
+  "short": "The RSDE head is listed in the 2025 ranking.",
+  "text": [
+   "Francesca Bovolo, founder and head of RSDE, is included in the 2025 edition of the World's Top 2% Scientists ranking, compiled by Stanford University and published by Elsevier on the basis of Scopus citation data.",
+   "In an interview with FBK Magazine she looks back at the experiences that shaped her research, from the ESA Climate Change Initiative to the unit's role in two ESA missions: JUICE, to Jupiter and its icy moons, and EnVision, to Venus."
+  ],
+  "link": "https://magazine.fbk.eu/en/news/fbk-in-the-worlds-top-2-scientists-2025/",
+  "src": "FBK Magazine"
+ },
+ {
+  "id": "phd-2024",
+  "date": "26 Apr 2024",
+  "title": "PhD student positions @RSDE",
+  "img": "graduation-cap-and-globe-icon-vector-5293774-627x376.jpg",
+  "fb": "https://rsde.fbk.eu/wp-content/uploads/2023/05/graduation-cap-and-globe-icon-vector-5293774-627x376.jpg",
+  "short": "Looking for motivated candidates with an excellent study career.",
+  "text": [
+   "RSDE is looking for strongly motivated PhD candidates with an excellent study career, interested in remote sensing, machine learning and the analysis of satellite and planetary radar data.",
+   "PhD grants are offered together with the University of Trento. Open calls are published on the FBK PhD portal."
+  ],
+  "link": "https://rsde.fbk.eu/phd-student-positions-rsde-2024/",
+  "src": "rsde.fbk.eu"
+ },
+ {
+  "id": "aiforgood-2024",
+  "date": "14 Feb 2024",
+  "title": "CCI HRLC products at \"AI for Good\"",
+  "img": "03-12-GEO-AI-627x376.png",
+  "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/02/03-12-GEO-AI-627x376.png",
+  "short": "Webinar on the ESA CCI High Resolution Land Cover maps.",
+  "text": [
+   "The high resolution land cover maps produced in the ESA Climate Change Initiative HRLC project were presented in a webinar of the ITU \"AI for Good\" series on 12 March 2024.",
+   "The products describe land cover and its changes at high resolution as an Essential Climate Variable, a field in which RSDE contributes methods for Sentinel time series analysis."
+  ],
+  "link": "https://rsde.fbk.eu/esa-cci-hrlc-webinar-aiforgood/",
+  "src": "rsde.fbk.eu"
+ },
+ {
+  "id": "donini-esa-2024",
+  "date": "2 Feb 2024",
+  "title": "Elena Donini selected as ESA visiting scientist",
+  "img": "ice_layers_verticale.gif",
+  "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/04/ice_layers_verticale.gif",
+  "short": "Selecting significant radargrams in large archives for RIME and SRS.",
+  "text": [
+   "Elena Donini has been selected by an independent committee for ESA's Archival Research Visitor Programme and will spend three months at ESTEC in Noordwijk in spring 2024.",
+   "She will work on Fast CARS (Fast Content-based Radar soundEr Data Retrieval), a method to efficiently retrieve significant radargrams from large archives such as MARSIS on Mars Express. The approach is meant to support future missions RSDE is involved in, RIME on JUICE and SRS on EnVision."
+  ],
+  "link": "https://magazine.fbk.eu/en/news/elena-donini-selected-visiting-scientist-by-esa-archival-research-visitor-programme/",
+  "src": "FBK Magazine"
+ },
+ {
+  "id": "envision-2024",
+  "date": "26 Jan 2024",
+  "title": "Green light for EnVision",
+  "img": "IMG_4627-627x375.png",
+  "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/01/IMG_4627-627x375.png",
+  "short": "ESA formally adopts the mission to Venus.",
+  "text": [
+   "ESA has formally adopted EnVision, the mission that will study Venus from its core to its upper atmosphere to understand why it evolved so differently from Earth.",
+   "RSDE contributes to the Subsurface Radar Sounder (SRS), working on the design of the instrument and on the analysis of its data."
+  ],
+  "link": "https://rsde.fbk.eu/envision-adoption/",
+  "src": "rsde.fbk.eu"
+ },
+ {
+  "id": "hrlc-ph2-2024",
+  "date": "19 Jan 2024",
+  "title": "CCI HRLC Phase 2 kicks off",
+  "img": "MicrosoftTeams-image-46-627x376.jpg",
+  "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/01/MicrosoftTeams-image-46-627x376.jpg",
+  "short": "Second phase of the ESA CCI High Resolution Land Cover project.",
+  "text": [
+   "The second phase of the ESA Climate Change Initiative High Resolution Land Cover project has started, running from 2024 to 2027.",
+   "Building on the products of Phase 1, the project continues to develop high resolution land cover and land cover change maps as an Essential Climate Variable."
+  ],
+  "link": "https://rsde.fbk.eu/cc-hrlc-ph2-ko/",
+  "src": "rsde.fbk.eu"
+ },
+ {
+  "id": "fires-2023",
+  "date": "1 Aug 2023",
+  "title": "Rhodes, Corfu and Palermo fires",
+  "img": "palermo_BA-627x376.png",
+  "fb": "https://rsde.fbk.eu/wp-content/uploads/2023/08/palermo_BA-627x376.png",
+  "short": "Tracking burned area over time with Sentinel-2.",
+  "text": [
+   "In summer 2023 large wildfires hit Rhodes, Corfu and the area of Palermo.",
+   "Using Sentinel-2 imagery, RSDE mapped the burned areas and tracked how they evolved over time, applying its automatic burned area detection methods."
+  ],
+  "link": "https://rsde.fbk.eu/rhodes-corfu-and-palermos-fires-tracking-burned-area-in-time/",
+  "src": "rsde.fbk.eu"
+ }
+];
+(() => {
+  const rail = document.getElementById('newsrail'), dlg = document.getElementById('newsdlg');
+  const im = n => `<img loading="lazy" src="img/${n.img}" ${n.fb?`data-fallback="${n.fb}"`:''} alt=""${n.contain?' style="object-fit:contain;background:#fff"':''}>`;
+  rail.innerHTML = NEWS.map(n => `<a class="news-item" href="#news-${n.id}"><div class="nthumb">${im(n)}</div>
+    <span class="date">${esc(n.date)}</span><h4>${esc(n.title)}</h4><p>${esc(n.short)}</p></a>`).join('');
+  function open(){
+    const m = location.hash.match(/^#news-(.+)$/), n = m && NEWS.find(x => x.id === m[1]);
+    if (!n) { if (dlg.open) dlg.close(); return; }
+    dlg.querySelector('.nbody').innerHTML = `<div class="nimg">${im(n)}</div><div class="ntext">
+      <span class="date">${esc(n.date)}</span><h3>${esc(n.title)}</h3>${n.text.map(t=>`<p>${esc(t)}</p>`).join('')}
+      ${n.link?`<a class="btn ghost" href="${esc(n.link)}" target="_blank" rel="noopener">Read more on ${esc(n.src||'the original page')} →</a>`:''}</div>`;
+    if (!dlg.open) dlg.showModal();
+  }
+  function close(){ if (dlg.open) dlg.close(); if (location.hash.startsWith('#news-')) history.replaceState(null,'',location.pathname+location.search+'#latest'); }
+  dlg.addEventListener('click', e => { if (e.target === dlg || e.target.closest('.pclose')) close(); });
+  dlg.addEventListener('cancel', e => { e.preventDefault(); close(); });
+  window.addEventListener('hashchange', open); open();
+})();
 
 
 const ICONS = {

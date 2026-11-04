@@ -323,3 +323,15 @@
   .sdots{position:absolute;right:22px;bottom:24px;display:flex;gap:8px;z-index:2}
   .sdots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.45);cursor:pointer;transition:all .2s}
   .sdots button.on{background:#fff;width:24px;border-radius:5px}
+
+  /* News card dialog */
+  dialog.ndlg{border:0;border-radius:18px;padding:0;width:min(820px,94vw);max-height:90vh;box-shadow:0 30px 80px rgba(15,27,42,.3);overflow:auto}
+  dialog.ndlg::backdrop{background:rgba(15,27,42,.55);backdrop-filter:blur(3px)}
+  .ndlg .nimg{aspect-ratio:16/8;background:#0b1622;overflow:hidden}
+  .ndlg .nimg img{width:100%;height:100%;object-fit:cover}
+  .ndlg .ntext{padding:26px 32px 32px}
+  .ndlg .date{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--blue)}
+  .ndlg h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:34px;line-height:1.1;margin:6px 0 14px}
+  .ndlg p{color:var(--ink-2);font-size:16px;line-height:1.65;margin:0 0 12px}
+  .ndlg .btn{margin-top:10px}
+  .ndlg .pclose{z-index:2;background:rgba(255,255,255,.9)}
