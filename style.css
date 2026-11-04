@@ -335,3 +335,19 @@
   .ndlg p{color:var(--ink-2);font-size:16px;line-height:1.65;margin:0 0 12px}
   .ndlg .btn{margin-top:10px}
   .ndlg .pclose{z-index:2;background:rgba(255,255,255,.9)}
+
+  /* News card: same look as the people card (padding, rounded image) */
+  .ndlg .nbody{padding:32px}
+  .ndlg .nimg{aspect-ratio:16/8;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+  .ndlg .ntext{padding:22px 0 0}
+  .ndlg .pclose{top:12px;right:14px}
+
+  /* Application areas: Earth (green) / Space (blue) */
+  .apps{display:block}
+  .apps > strong{display:block;margin-bottom:12px;font-size:14px}
+  .approw{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  .appk{font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-d);width:62px}
+  .appk.g{color:var(--earth)}
+  .approw{display:grid;grid-template-columns:70px 1fr;gap:8px;align-items:start}
+  .approw .appk{padding-top:6px}
+  .apppills{display:flex;flex-wrap:wrap;gap:8px}

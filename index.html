@@ -148,8 +148,8 @@ window.addEventListener('error',function(e){var t=e.target;
 
     <div class="apps">
       <strong>Application areas</strong>
-      <span class="pill g">Precision agriculture</span><span class="pill g">Forestry</span><span class="pill g">Water resources</span>
-      <span class="pill">Infrastructure monitoring</span><span class="pill">Civil protection</span><span class="pill">Climate services</span>
+      <div class="approw"><span class="appk g">Earth</span><div class="apppills"><span class="pill g">Precision agriculture</span><span class="pill g">Forestry</span><span class="pill g">Water quality &amp; bathymetry</span><span class="pill g">Land cover &amp; land use</span><span class="pill g">Climate change monitoring</span><span class="pill g">Cryosphere &amp; glaciers</span><span class="pill g">Wildfires &amp; burned areas</span><span class="pill g">Floods &amp; natural disasters</span><span class="pill g">Civil protection</span><span class="pill g">Infrastructure monitoring</span><span class="pill g">Urban areas</span><span class="pill g">Open &amp; crowdsourced data</span></div></div>
+      <div class="approw"><span class="appk">Space</span><div class="apppills"><span class="pill">Planetary exploration</span><span class="pill">Jupiter’s icy moons</span><span class="pill">Venus</span><span class="pill">Mars &amp; Moon subsurface</span><span class="pill">Radar sounder design</span><span class="pill">Space mission data analysis</span></div></div>
     </div>
   </div>
 </section>
@@ -193,7 +193,7 @@ window.addEventListener('error',function(e){var t=e.target;
     <p class="sec-intro">From the ESA Climate Change Initiative to missions toward Jupiter and Venus, our projects span local, national and international scales.</p>
 
     <div class="grid3">
-      <a class="card" href="https://rsde.fbk.eu/cci-hrlc-ph-2/" style="text-decoration:none;color:inherit">
+      <div class="card">
         <div class="proj-logo"><img loading="lazy" src="img/cci_HR_land_cover_logo-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2018/11/cci_HR_land_cover_logo-150x150.png" alt="CCI HRLC"></div>
         <div class="body">
           <span class="k">ESA · 2024–2027</span>
@@ -201,8 +201,8 @@ window.addEventListener('error',function(e){var t=e.target;
           <p>High-resolution land cover as an Essential Climate Variable, within ESA's Climate Change Initiative.</p>
           <div class="meta"><span class="pill g">Sentinel-1/2</span><span class="pill g">Land cover</span></div>
         </div>
-      </a>
-      <a class="card" href="https://rsde.fbk.eu/juice-rime/" style="text-decoration:none;color:inherit">
+      </div>
+      <div class="card">
         <div class="proj-logo"><img loading="lazy" src="img/RIME-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/03/RIME-150x150.png" alt="RIME"></div>
         <div class="body">
           <span class="k">ESA · ASI · NASA · 2013–2030</span>
@@ -210,8 +210,8 @@ window.addEventListener('error',function(e){var t=e.target;
           <p>Radar for Icy Moon Exploration on ESA's JUICE, sounding Ganymede, Europa and Callisto up to 9 km deep.</p>
           <div class="meta"><span class="pill">Radar sounder</span><span class="pill">Jupiter</span></div>
         </div>
-      </a>
-      <a class="card" href="https://rsde.fbk.eu/envision/" style="text-decoration:none;color:inherit">
+      </div>
+      <div class="card">
         <div class="proj-logo"><img loading="lazy" src="img/ENVISION-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/03/ENVISION-150x150.png" alt="EnVision"></div>
         <div class="body">
           <span class="k">ESA · NASA · 2021–2034</span>
@@ -219,7 +219,7 @@ window.addEventListener('error',function(e){var t=e.target;
           <p>Understanding why Venus is so different from Earth, with the Subsurface Radar Sounder (SRS).</p>
           <div class="meta"><span class="pill">Radar sounder</span><span class="pill">Venus</span></div>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="sub">
@@ -227,16 +227,16 @@ window.addEventListener('error',function(e){var t=e.target;
       <div class="arrows"><button aria-label="Previous" data-rail="arch" data-dir="-1">←</button> <button aria-label="Next" data-rail="arch" data-dir="1">→</button></div>
     </div>
     <div class="rail" id="arch">
-      <a class="mini" href="https://rsde.fbk.eu/iimeo/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/IIMEO_Logo_rgb-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2022/12/IIMEO_Logo_rgb-150x150.png" alt=""></div><span class="k">Horizon Europe · 2022–2025</span><h4>IIMEO</h4><p>Instantaneous infrastructure monitoring by Earth observation.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/pnrr-spoke4/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/pnrr-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/pnrr-150x150.png" alt=""></div><span class="k">PNRR · NextGenerationEU · 2022–2025</span><h4>ICSC Spoke 4 – Earth & Climate</h4><p>Big data and HPC for climate change and its impacts.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/prisma-learn/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/prisma_2-300x210-1-150x150.jpg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/prisma_2-300x210-1-150x150.jpg" alt=""></div><span class="k">ASI · 2022–2024</span><h4>PRISMA_Learn</h4><p>Advanced machine learning for the PRISMA hyperspectral mission.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/multibigsardata/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/multibigsardata-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/multibigsardata-150x150.png" alt=""></div><span class="k">ASI · 2021–2023</span><h4>MultiBigSARData</h4><p>Semi-automatic information extraction from multi-mission SAR time series.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/cci-hrlc-ph-1/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/cci_HR_land_cover_logo-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2018/11/cci_HR_land_cover_logo-150x150.png" alt=""></div><span class="k">ESA · 2018–2021</span><h4>CCI+ HRLC Phase 1</h4><p>First phase of the High Resolution Land Cover ECV.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/esa-seom-s2-4sci-mta/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/Sentinel-2_mission_logo_pillars-1024x1024-1-150x150.jpg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/Sentinel-2_mission_logo_pillars-1024x1024-1-150x150.jpg" alt=""></div><span class="k">ESA · 2018–2020</span><h4>S2-4Sci Land & Water</h4><p>Multitemporal analysis of land and water with Sentinel-2.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/stratus/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/stratuslogo-150x118.jpeg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/stratuslogo-150x118.jpeg" alt=""></div><span class="k">ASI · 2016–2018</span><h4>STRATUS</h4><p>Satellite radar sounder for Earth sub-surface sensing.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/cryomon-scipro/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/logo_euregio-150x109.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/logo_euregio-150x109.png" alt=""></div><span class="k">Euregio · 2016–2019</span><h4>CRYOMON-SciPro</h4><p>Interregional network on cryosphere science.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/itpar-ph-3/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/ita-india-2-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/ita-india-2-150x150.png" alt=""></div><span class="k">2015–2019</span><h4>ITPAR Phase 3</h4><p>India–Trento Program for Advanced Research: optical and SAR analysis.</p></a>
-      <a class="mini" href="https://rsde.fbk.eu/ats4s/" style="text-decoration:none;color:inherit"><div class="mlogo"><img loading="lazy" src="img/25to_ts-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/25to_ts-150x150.png" alt=""></div><span class="k">ESA · 2013–2015</span><h4>ATS4S</h4><p>Snow properties in the Alps from ASAR time series.</p></a>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/IIMEO_Logo_rgb-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2022/12/IIMEO_Logo_rgb-150x150.png" alt=""></div><span class="k">Horizon Europe · 2022–2025</span><h4>IIMEO</h4><p>Instantaneous infrastructure monitoring by Earth observation.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/pnrr-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/pnrr-150x150.png" alt=""></div><span class="k">PNRR · NextGenerationEU · 2022–2025</span><h4>ICSC Spoke 4 – Earth & Climate</h4><p>Big data and HPC for climate change and its impacts.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/prisma_2-300x210-1-150x150.jpg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/prisma_2-300x210-1-150x150.jpg" alt=""></div><span class="k">ASI · 2022–2024</span><h4>PRISMA_Learn</h4><p>Advanced machine learning for the PRISMA hyperspectral mission.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/multibigsardata-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/multibigsardata-150x150.png" alt=""></div><span class="k">ASI · 2021–2023</span><h4>MultiBigSARData</h4><p>Semi-automatic information extraction from multi-mission SAR time series.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/cci_HR_land_cover_logo-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2018/11/cci_HR_land_cover_logo-150x150.png" alt=""></div><span class="k">ESA · 2018–2021</span><h4>CCI+ HRLC Phase 1</h4><p>First phase of the High Resolution Land Cover ECV.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/Sentinel-2_mission_logo_pillars-1024x1024-1-150x150.jpg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/Sentinel-2_mission_logo_pillars-1024x1024-1-150x150.jpg" alt=""></div><span class="k">ESA · 2018–2020</span><h4>S2-4Sci Land & Water</h4><p>Multitemporal analysis of land and water with Sentinel-2.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/stratuslogo-150x118.jpeg" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/stratuslogo-150x118.jpeg" alt=""></div><span class="k">ASI · 2016–2018</span><h4>STRATUS</h4><p>Satellite radar sounder for Earth sub-surface sensing.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/logo_euregio-150x109.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/logo_euregio-150x109.png" alt=""></div><span class="k">Euregio · 2016–2019</span><h4>CRYOMON-SciPro</h4><p>Interregional network on cryosphere science.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/ita-india-2-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/ita-india-2-150x150.png" alt=""></div><span class="k">2015–2019</span><h4>ITPAR Phase 3</h4><p>India–Trento Program for Advanced Research: optical and SAR analysis.</p></div>
+      <div class="mini"><div class="mlogo"><img loading="lazy" src="img/25to_ts-150x150.png" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2023/01/25to_ts-150x150.png" alt=""></div><span class="k">ESA · 2013–2015</span><h4>ATS4S</h4><p>Snow properties in the Alps from ASAR time series.</p></div>
     </div>
   </div>
 </section>
@@ -247,10 +247,10 @@ window.addEventListener('error',function(e){var t=e.target;
     <div class="sec-head"><span class="sec-num">05</span><h2>Products, maps & data</h2></div>
     <p class="sec-intro">Some of the datasets, maps and processing chains coming out of our research.</p>
     <div class="grid2">
-      <a class="card" href="https://rsde.fbk.eu/cci-hrlc-products-ph1/" style="text-decoration:none;color:inherit">
+      <div class="card">
         <div class="thumb"><img loading="lazy" src="img/scene3_amazon_cd_deforestation_v9_0001-1500-ezgif.com-speed.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/03/scene3_amazon_cd_deforestation_v9_0001-1500-ezgif.com-speed.gif" alt=""></div>
         <div class="body"><span class="k">Dataset · ESA CCI</span><h3>CCI High Resolution Land Cover products</h3><p>High-resolution land cover and land cover change maps from Sentinel time series, released in Phase 1 of the ESA CCI HRLC project.</p></div>
-      </a>
+      </div>
       <div class="card">
         <div class="thumb"><img loading="lazy" src="img/burned_area_trk.gif" data-fallback="https://rsde.fbk.eu/wp-content/uploads/2024/04/burned_area_trk.gif" alt=""></div>
         <div class="body"><span class="k">Method · Sentinel-2</span><h3>Burned area detection & tracking</h3><p>Automatic mapping of fire-affected areas over time, applied to the 2023 fires in Rhodes, Corfu and Palermo.</p></div>
@@ -447,11 +447,12 @@ const NEWS = [
   "fb": "https://rsde.fbk.eu/wp-content/uploads/2023/05/graduation-cap-and-globe-icon-vector-5293774-627x376.jpg",
   "short": "Looking for motivated candidates with an excellent study career.",
   "text": [
-   "RSDE is looking for strongly motivated PhD candidates with an excellent study career, interested in remote sensing, machine learning and the analysis of satellite and planetary radar data.",
-   "PhD grants are offered together with the University of Trento. Open calls are published on the FBK PhD portal."
+   "RSDE is looking for strongly motivated PhD candidates with an excellent study career, interested in artificial intelligence, machine learning, radar and remote sensing for Earth observation and/or planetary exploration.",
+   "Two topics are open in the PhD School in Information Engineering and Computer Science (IECS) of the University of Trento: D6, advanced methods for the analysis of remote sensing time series; and D7, advanced radar sounder data processing and information extraction.",
+   "Applications must be submitted through the IECS call by 7 May 2024, 4:00 PM (CEST)."
   ],
-  "link": "https://rsde.fbk.eu/phd-student-positions-rsde-2024/",
-  "src": "rsde.fbk.eu"
+  "link": "https://phd.fbk.eu/",
+  "src": "FBK PhD portal"
  },
  {
   "id": "aiforgood-2024",
@@ -461,11 +462,12 @@ const NEWS = [
   "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/02/03-12-GEO-AI-627x376.png",
   "short": "Webinar on the ESA CCI High Resolution Land Cover maps.",
   "text": [
-   "The high resolution land cover maps produced in the ESA Climate Change Initiative HRLC project were presented in a webinar of the ITU \"AI for Good\" series on 12 March 2024.",
-   "The products describe land cover and its changes at high resolution as an Essential Climate Variable, a field in which RSDE contributes methods for Sentinel time series analysis."
+   "The webinar \"Introduction to the High Resolution Land Cover Map\" will take place on 12 March 2024 at 16:15 CET, hosted by AI for Good.",
+   "It will present the design and use of AI-based processing chains for Earth observation data that produce the high resolution land cover products of ESA's Climate Change Initiative: maps at 10 m and 30 m describing land cover and its changes from 1990 to 2019, at subcontinental and regional scale.",
+   "Products for Amazonia, the Africa Sahel and Siberia will be shown, together with a demonstration of how to download them. Don't miss it!"
   ],
-  "link": "https://rsde.fbk.eu/esa-cci-hrlc-webinar-aiforgood/",
-  "src": "rsde.fbk.eu"
+  "link": "https://aiforgood.itu.int/event/new-climate-change-initiative-high-resolution-land-cover-map-from-the-european-space-agency/",
+  "src": "AI for Good"
  },
  {
   "id": "donini-esa-2024",
@@ -489,11 +491,12 @@ const NEWS = [
   "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/01/IMG_4627-627x375.png",
   "short": "ESA formally adopts the mission to Venus.",
   "text": [
-   "ESA has formally adopted EnVision, the mission that will study Venus from its core to its upper atmosphere to understand why it evolved so differently from Earth.",
-   "RSDE contributes to the Subsurface Radar Sounder (SRS), working on the design of the instrument and on the analysis of its data."
+   "ESA has officially adopted EnVision: the study phase is complete and the mission moves to the next stage of development, with launch planned in 2031. EnVision was selected by ESA's Science Programme Committee on 10 June 2021 as the fifth medium-class mission of the Cosmic Vision programme.",
+   "RSDE is part of the team developing the Subsurface Radar Sounder (SRS), led by Prof. Lorenzo Bruzzone of the RSLab, University of Trento. SRS will probe the first hundreds of metres below the surface of Venus and is the first radar sounder ever flown to the planet.",
+   "It will help explain features such as pancake domes and tesserae, and study stratigraphy, volcanic structures and buried craters. SRS can also detect possible lightning in the Venus atmosphere, which could reveal volcanic eruptions."
   ],
-  "link": "https://rsde.fbk.eu/envision-adoption/",
-  "src": "rsde.fbk.eu"
+  "link": "",
+  "src": "ESA"
  },
  {
   "id": "hrlc-ph2-2024",
@@ -503,11 +506,12 @@ const NEWS = [
   "fb": "https://rsde.fbk.eu/wp-content/uploads/2024/01/MicrosoftTeams-image-46-627x376.jpg",
   "short": "Second phase of the ESA CCI High Resolution Land Cover project.",
   "text": [
-   "The second phase of the ESA Climate Change Initiative High Resolution Land Cover project has started, running from 2024 to 2027.",
-   "Building on the products of Phase 1, the project continues to develop high resolution land cover and land cover change maps as an Essential Climate Variable."
+   "The High Resolution Land Cover (HRLC) Essential Climate Variable project of ESA's Climate Change Initiative started its Phase-2 activities with a kick-off meeting at ESA ESRIN in Frascati, Italy.",
+   "Phase-1 produced land cover maps at 10 m resolution for 2019 and time series of land cover maps at 30 m every 5 years from 1990 to 2019 over the Amazon, the Africa Sahel and Siberia, together with yearly maps. These products will be presented in the coming weeks: stay tuned!",
+   "The project studies in detail the role of spatial resolution in mapping land cover and its changes, to support climate modelling. Land cover and its changes are both causes and consequences of climate change, human-induced or natural. Moving from the 300 m global maps of the previous CCI phase to 10–30 m requires new data analysis and processing methods, both theoretically and operationally."
   ],
-  "link": "https://rsde.fbk.eu/cc-hrlc-ph2-ko/",
-  "src": "rsde.fbk.eu"
+  "link": "https://climate.esa.int/en/projects/high-resolution-land-cover/",
+  "src": "ESA Climate Office"
  },
  {
   "id": "fires-2023",
@@ -517,11 +521,12 @@ const NEWS = [
   "fb": "https://rsde.fbk.eu/wp-content/uploads/2023/08/palermo_BA-627x376.png",
   "short": "Tracking burned area over time with Sentinel-2.",
   "text": [
-   "In summer 2023 large wildfires hit Rhodes, Corfu and the area of Palermo.",
-   "Using Sentinel-2 imagery, RSDE mapped the burned areas and tracked how they evolved over time, applying its automatic burned area detection methods."
+   "Fire events are frequent in the Mediterranean area and are a growing concern, both because of the threat to people and because of climate change.",
+   "Using multispectral images from ESA's Sentinel-2 constellation, with a revisit time of 5 days, we tracked how the summer 2023 fires spread in three hot spots: Rhodes and Corfu in Greece, and Palermo in Italy. The maps show the burned area over time up to 28 July (Rhodes), 30 July (Corfu) and 31 July 2023 (Palermo), and speak for themselves about how dramatic this year's fires have been.",
+   "The method is described in M. Zanetti and F. Bovolo, IEEE Transactions on Geoscience and Remote Sensing, 2023."
   ],
-  "link": "https://rsde.fbk.eu/rhodes-corfu-and-palermos-fires-tracking-burned-area-in-time/",
-  "src": "rsde.fbk.eu"
+  "link": "https://doi.org/10.1109/TGRS.2023.3301056",
+  "src": "IEEE Xplore (the paper)"
  }
 ];
 (() => {
