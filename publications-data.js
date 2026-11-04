@@ -52,6 +52,10 @@ const PUBS = [
 ];
 /* Conference papers and abstracts: same format as PUBS */
 const CONFS = [
+  ["M. Atanasova, L. Bergamasco, F. Bovolo", "Intra- and Inter-Annual Analysis of Remote Sensing Time Series with Multitask Learning", "SPIE Image and Signal Processing for Remote Sensing XXXI, Proc. SPIE 13670, Madrid", 2025, "10.1117/12.3069849"],
+  ["L. Bergamasco, E. Donini, R. Lappe, et al., F. Bovolo", "A Preliminary Study on the Detection of Glacial Lake Outburst Flood in Norway Using Sentinel-2 Imagery", "Conference paper, September 2025", 2025, ""],
+  ["K. Meshkini, F. Bovolo", "Transformer-Based Spatio-Temporal Change Detection Network Using Satellite Image Time Series: A Case Study of Forest Disturbance in Trentino, Italy, Following the Vaia Storm", "IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Brisbane", 2025, ""],
+  ["E. Donini, M. Hoyo García, J. Paden, F. Bovolo", "Co-Registration Analysis of Coherent Multitemporal Radargrams", "Conference paper, August 2025", 2025, ""],
   ["M. Zanetti, F. Bovolo", "One-Class Classification of Vegetation Related Changes via Mutual Ordering of Normalized Differences", "IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Athens", 2024, "10.1109/IGARSS53475.2024.10642100"],
   ["Z. Yin, Y. Tang, M. Yu, F. Bovolo", "Sea Ice Semantic Segmentation with Sentinel-2 Data Based on Adaptive Sample Training on U-Net Network", "IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Athens", 2024, "10.1109/IGARSS53475.2024.10642304"],
   ["K. Meshkini, D. Doktor, F. Bovolo", "Crop Field Boundary Detection Using 3D Convolutions in Multi-Spectral Multi-Temporal HR Satellite Images", "IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Athens", 2024, "10.1109/IGARSS53475.2024.10640530"],
